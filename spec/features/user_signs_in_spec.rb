@@ -10,12 +10,12 @@ feature 'user signs in' do
   let(:user) { FactoryGirl.create(:user) }
 
   scenario 'user signs in with no problems' do
-    sign_in_as(user)
+    visit root_path
+
   end
 
   scenario 'user attempts to sign in blank' do
     visit root_path
-    click_link 'Sign In'
     click_button 'Sign In'
 
     expect(page).to have_content("Invalid email or password")
@@ -23,7 +23,6 @@ feature 'user signs in' do
 
   scenario 'a non existent email and password is supplied and denied access' do
     visit root_path
-    click_link 'Sign In'
     fill_in 'Email', with: 'nobody@example.com'
     fill_in 'Password', with: 'no_password'
     click_button 'Sign In'
@@ -33,7 +32,6 @@ feature 'user signs in' do
 
   scenario 'user attemps to sign in with incorrect password and denied access' do
     visit root_path
-    click_link 'Sign In'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: "not#{user.password}"
     click_button 'Sign In'
