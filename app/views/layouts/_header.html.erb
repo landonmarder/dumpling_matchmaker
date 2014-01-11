@@ -10,7 +10,7 @@
     <section class="top-bar-section">
       <ul class="right">
         <% if user_signed_in? %>
-          <li><%= link_to 'Request a Soup', new_requests_path %></li>
+          <li><%= link_to 'Request a Soup', new_request_path %></li>
           <li class="divider"></li>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <% else %>
