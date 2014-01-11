@@ -19,7 +19,6 @@ feature 'user registers' do
     fill_in 'Email', with: 'user@example.com'
     fill_in 'Password', with: 'Password123'
     fill_in 'Password Confirmation', with: 'Password123'
-    save_and_open_page
     click_button 'Sign Up'
 
     expect(page).to have_content("Welcome! You have successfully signed up.")
