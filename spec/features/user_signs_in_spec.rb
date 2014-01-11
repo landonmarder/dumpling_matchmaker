@@ -17,7 +17,7 @@ feature 'user signs in' do
     visit root_path
     click_link 'Sign In'
     click_button 'Sign In'
-    save_and_open_page
+
     expect(page).to have_content("Invalid email or password")
   end
 
