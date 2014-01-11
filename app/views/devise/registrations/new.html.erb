@@ -1,0 +1,18 @@
+<h2>Sign Up:</h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  <div><%= f.input :first_name, label: 'First Name' %></div>
+
+  <div><%= f.input :last_name, label: 'Last Name' %></div>
+
+  <div><%= f.input :email %></div>
+
+  <div><%= f.input :password %></div>
+
+  <div><%= f.input :password_confirmation, label: 'Password Confirmation' %></div>
+
+  <div><%= f.submit "Sign Up" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>

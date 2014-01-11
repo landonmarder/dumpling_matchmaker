@@ -11,17 +11,26 @@ feature 'user registers' do
   scenario 'person registers successfully' do
     visit root_path
     click_link 'Sign Up'
+
     expect(page).to have_content('Sign Up:')
+
     fill_in 'First Name', with: 'Joe'
     fill_in 'Last Name', with: 'Smith'
     fill_in 'Email', with: 'user@example.com'
     fill_in 'Password', with: 'Password123'
     fill_in 'Password Confirmation', with: 'Password123'
+    save_and_open_page
     click_button 'Sign Up'
 
-    expect(page).to have_content("Signed up successfully")
+    expect(page).to have_content("Welcome! You have successfully signed up.")
     expect(page).to have_content('Sign Out')
   end
 
-  scenario 'person tries to register unsuccessfully'
+  scenario 'person tries to register unsuccessfully' do
+    visit root_path
+    click_link 'Sign Up'
+
+    click_button 'Sign Up'
+    expect(page).to have_content("can't be blank")
+  end
 end
