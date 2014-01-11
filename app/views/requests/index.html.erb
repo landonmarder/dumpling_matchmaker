@@ -1,0 +1,21 @@
+<h1>Dumpling King Matcher</h1>
+
+<table class="aligncenter">
+    <thead>
+      <th>Name</th>
+      <th>Soup</th>
+      <th>Requested At</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% @requests.each do |request| %>
+      <tr>
+        <td><%= request.user.first_name %> <%= request.user.last_name %></td>
+        <td><%= request.soup %></td>
+        <td><%= (request.created_at - 4.hours).strftime('%a. %B %d %r') %></td>
+        <td><%= link_to 'Fulfill Request', request, method: :delete, data: { confirm: 'Click OK to Fulfill Request!' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+

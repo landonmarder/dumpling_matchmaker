@@ -13,15 +13,18 @@ feature 'user fulfills a soup request' do
   scenario 'user fulfills a request' do
     soup_wanter = FactoryGirl.create(:user)
     soup_request = FactoryGirl.create(:request, user: soup_wanter)
-    sign_in_as(soup_fulfiller)
+    visit root_path
+    within(".user_email") { fill_in 'Email', with: soup_fulfiller.email }
+    fill_in 'Password', with: soup_fulfiller.password
+    click_button 'Sign In'
 
     click_link 'Fulfill a Soup Request'
-    expect(page).to have_content(soup_wanter.name)
+    expect(page).to have_content(soup_wanter.first_name + ' ' + soup_wanter.last_name)
     expect(page).to have_content(soup_request.soup)
 
     click_link 'Fulfill Request'
     expect(page).to have_content('Request Fulfilled!')
-    expect(page).to_not have_content(soup_wanter.name)
+    expect(page).to_not have_content(soup_wanter.first_name + ' ' + soup_wanter.last_name)
     expect(page).to_not have_content(soup_request.soup)
   end
 end

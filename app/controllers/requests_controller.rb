@@ -19,6 +19,13 @@ class RequestsController < ApplicationController
     @request = Request.new
   end
 
+  def destroy
+    Request.find(params[:id]).destroy
+    redirect_to requests_path,
+    notice: 'Request Fulfilled!'
+
+  end
+
   private
 
   def request_params
