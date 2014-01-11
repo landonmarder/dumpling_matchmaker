@@ -1,0 +1,35 @@
+<header>
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="/">Dumpling King Matchmaker</a></h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <ul class="right">
+        <% if user_signed_in? %>
+          <li><%= link_to 'Request a Soup', new_requests_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li>
+
+          <div class="navbar-form">
+            <%= simple_form_for("user", :url => user_session_path) do |f| %>
+              <%= f.input :email, placeholder: 'Email', label: false %>
+              <%= f.input :password, placeholder: 'Password', label: false %>
+              <%= f.submit 'Sign In', class: "button sign-in-button" %>
+            <% end %>
+          </div>
+
+          </li>
+        <% end %>
+      </ul>
+      <ul class="left">
+      </ul>
+    </section>
+  </nav>
+</header>
+

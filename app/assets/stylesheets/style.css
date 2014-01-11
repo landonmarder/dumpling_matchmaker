@@ -1,0 +1,12 @@
+.input  {
+  display: inline-block;
+}
+
+.top-bar-section li {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.sign-in-button {
+  margin-left: 10px;
+}
