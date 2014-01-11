@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Request do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should belong_to(:user) }
+  it { should have_valid(:soup).when('Soup') }
+  it { should_not have_valid(:soup).when(nil, '') }
 end
