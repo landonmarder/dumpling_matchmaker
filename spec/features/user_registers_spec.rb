@@ -16,8 +16,8 @@ feature 'user registers' do
 
     fill_in 'First Name', with: 'Joe'
     fill_in 'Last Name', with: 'Smith'
-    fill_in 'Email', with: 'user@example.com'
-    fill_in 'Password', with: 'Password123'
+    within(".body-email") { fill_in 'Email', with: 'user@example.com' }
+    within(".body-password") { fill_in 'Password', with: 'Password123' }
     fill_in 'Password Confirmation', with: 'Password123'
     click_button 'Sign Up'
 
