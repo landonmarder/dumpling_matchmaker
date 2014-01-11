@@ -13,6 +13,8 @@ gem 'simple_form'
 
 gem 'foundation-rails'
 
+gem 'dotenv-rails'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
