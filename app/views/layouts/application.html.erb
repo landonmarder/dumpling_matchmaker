@@ -12,7 +12,7 @@
     <%= link_to 'Sign Out', '#' if user_signed_in? %>
   <% else %>
     <%= link_to 'Sign Up', new_user_registration_path %>
-    <%= link_to 'Sign In', "#" %>
+    <%= link_to 'Sign In', new_user_session_path %>
   <% end %>
   </header>
   <p class="notice"><%= notice %></p>
