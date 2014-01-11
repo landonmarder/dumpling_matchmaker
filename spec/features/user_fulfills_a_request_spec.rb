@@ -32,5 +32,6 @@ feature 'user fulfills a soup request' do
     last_email = ActionMailer::Base.deliveries.last
     expect(last_email).to have_subject('Dumpling King Match Made!')
     expect(last_email).to deliver_to(soup_wanter.email, soup_fulfiller.email)
+    expect(last_email).to have_content("today for you. Please be ready to pay $1.")
   end
 end

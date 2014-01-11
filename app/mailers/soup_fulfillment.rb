@@ -7,7 +7,10 @@ class SoupFulfillment < ActionMailer::Base
   #   en.soup_fulfillment.match.subject
   #
   def match(fulfiller, requester, request)
-    @greeting = "Hi"
+    @fulfiller = fulfiller
+    @requester = requester
+    @request = request
+
 
     mail to: "#{fulfiller.email}, #{requester.email}", subject: "Dumpling King Match Made!"
 
