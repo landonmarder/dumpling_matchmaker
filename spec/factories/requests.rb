@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :request do
-    soup "MyString"
+    soup "Dumpling Soup"
+    user
   end
 end
