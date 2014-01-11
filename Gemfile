@@ -57,6 +57,7 @@ group :test, :development do
   gem 'valid_attribute'
   gem 'shoulda-matchers'
   gem 'capybara'
+  gem 'email_spec'
 end
 
 group :development do

@@ -11,6 +11,7 @@ feature 'user fulfills a soup request' do
   let(:soup_fulfiller) { FactoryGirl.create(:user) }
 
   scenario 'user fulfills a request' do
+    ActionMailer::Base.deliveries = []
     soup_wanter = FactoryGirl.create(:user)
     soup_request = FactoryGirl.create(:request, user: soup_wanter)
     visit root_path
@@ -26,5 +27,10 @@ feature 'user fulfills a soup request' do
     expect(page).to have_content('Request Fulfilled!')
     expect(page).to_not have_content(soup_wanter.first_name + ' ' + soup_wanter.last_name)
     expect(page).to_not have_content(soup_request.soup)
+
+    expect(ActionMailer::Base.deliveries.size).to eql(1)
+    last_email = ActionMailer::Base.deliveries.last
+    expect(last_email).to have_subject('Dumpling King Match Made!')
+    expect(last_email).to deliver_to(soup_wanter.email, soup_fulfiller.email)
   end
 end
