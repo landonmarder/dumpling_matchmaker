@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe User do
-  it { should have_valid(:fulfilled_by).when(nil, 1) }
 
   it { should have_valid(:email).when('user@example.com') }
   it { should_not have_valid(:email).when(nil, '', 'user', 'user@', 'user.com', '@.com')}
