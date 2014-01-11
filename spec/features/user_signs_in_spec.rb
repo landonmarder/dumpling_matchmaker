@@ -11,7 +11,11 @@ feature 'user signs in' do
 
   scenario 'user signs in with no problems' do
     visit root_path
+    within(".user_email") { fill_in 'Email', with: user.email }
+    fill_in 'Password', with: user.password
+    click_button 'Sign In'
 
+    expect(page).to have_content('Signed in successfully.')
   end
 
   scenario 'user attempts to sign in blank' do
