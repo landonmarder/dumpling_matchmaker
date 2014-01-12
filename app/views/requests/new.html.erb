@@ -1,10 +1,5 @@
-<div class="small-12 large-8 small-centered large-centered column">
-<h1 class="dumpling-table">Make Your Soup Selection</h1>
-<div class="dumpling-table twelve columns" >
-  <%= simple_form_for @request do |f| %>
-    <%= f.input :soup, collection: ['Dumpling Soup', 'Hot and Sour Soup'], as: :radio_buttons, label: false %>
-    <br>
-    <%= f.button :submit, 'Submit Request' %>
-  <% end %>
-</div>
+<div class="small-12 large-8 small-centered large-centered column aligncenter">
+<h1>Make Your Soup Selection</h1>
+  <div class="soup"><%= button_to 'Hot and Sour Soup', requests_path(soup: 'Hot and Sour Soup'), class: "large button" %></div>
+  <div class="soup"><%= button_to 'Dumpling Soup', requests_path(soup: 'Dumpling Soup'), class: "large button" %></div>
 </div>

@@ -36,6 +36,11 @@
   margin-left: 5%;
 }
 
+.soup {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
 body {
   background-image: url("http://farm3.staticflickr.com/2815/11914572603_92a85e0ca8_o.png");
 }

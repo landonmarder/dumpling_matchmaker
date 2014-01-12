@@ -15,7 +15,7 @@ feature 'user submits soup request',%q{
   # * User gets redirected to the home page
 
 
-  scenario 'with valid attributes' do
+  scenario 'make a selection for hot and sour' do
     user = FactoryGirl.create(:user)
     visit root_path
     within(".user_email") { fill_in 'Email', with: user.email }
@@ -23,9 +23,24 @@ feature 'user submits soup request',%q{
     click_button 'Sign In'
 
     click_link 'Request Soup'
-    choose('Dumpling Soup')
-    click_button 'Submit Request'
-    expect(page).to have_content('Request Submitted')
+    save_and_open_page
+    click_button('Hot and Sour')
+
+    expect(page).to have_content('Hot and Sour')
+    expect(page).to_not have_content("Dumpling Soup")
+  end
+
+  scenario 'with valid attributes make a selection for hot and sour' do
+    user = FactoryGirl.create(:user)
+    visit root_path
+    within(".user_email") { fill_in 'Email', with: user.email }
+    fill_in 'Password', with: user.password
+    click_button 'Sign In'
+
+    click_link 'Request Soup'
+    click_button('Dumpling Soup')
+    expect(page).to_not have_content('Hot and Sour')
+    expect(page).to have_content("Dumpling Soup")
   end
 end
 

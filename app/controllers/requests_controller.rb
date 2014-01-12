@@ -4,7 +4,8 @@ class RequestsController < ApplicationController
   end
 
   def create
-    @request = Request.new(request_params)
+    @request = Request.new
+    @request.soup = params["soup"]
     @request.user_id = current_user.id
 
     if @request.save
