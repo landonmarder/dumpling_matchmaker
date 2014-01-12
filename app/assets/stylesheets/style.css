@@ -22,6 +22,11 @@
   text-align: left;
 }
 
+.dumpling-header {
+  margin-top: 100px;
+  margin-left: 43%;
+}
+
 .aligncenter {
   text-align: center;
 }
@@ -29,4 +34,11 @@
 .dumpling-table {
   margin-top: 50px;
   margin-left: 5%;
+}
+
+
+body {
+  background-image: url("dumpling_kings.jpg");
+  background-position: top;
+  background-size: 3000px 2000px;
 }

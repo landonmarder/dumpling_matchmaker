@@ -1,9 +1,11 @@
-<div class="body-nav twelve columns" >
-  <%= link_to 'Sign Up', new_user_registration_path, class: "large button" unless user_signed_in? %>
+<div class="home-pic">
+  <div class="body-nav twelve columns" >
+    <%= link_to 'Sign Up', new_user_registration_path, class: "large button" unless user_signed_in? %>
 
-  <% if user_signed_in? %>
+    <% if user_signed_in? %>
 
-    <%= link_to 'Request Soup', new_request_path, class: "large button" %>
-    <%= link_to 'Fulfill a Soup Request', requests_path, class: "large button" %>
-  <% end %>
+      <%= link_to 'Request Soup', new_request_path, class: "large button" %>
+      <%= link_to 'Fulfill a Soup Request', requests_path, class: "large button" %>
+    <% end %>
+  </div>
 </div>
