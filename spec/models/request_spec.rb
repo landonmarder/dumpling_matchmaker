@@ -10,6 +10,6 @@ describe Request do
     soup_new = FactoryGirl.create(:request, created_at: DateTime.now )
     soup_newer = FactoryGirl.create(:request, created_at: DateTime.now )
 
-    expect(Request.results).to eq([soup_new, soup_newer])
+    expect(Request.today).to eq([soup_new, soup_newer])
   end
 end

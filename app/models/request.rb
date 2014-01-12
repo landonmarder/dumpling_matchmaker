@@ -5,7 +5,7 @@ class Request < ActiveRecord::Base
   validates_presence_of :soup
   validates_presence_of :user
 
-  def self.results
+  def self.today
     Request.where("created_at > ?", 1.days.ago)
   end
 end
