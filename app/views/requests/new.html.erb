@@ -1,6 +1,6 @@
-<div class="readable">
-<h1 class="dumpling-header">Make Your Soup Selection</h1>
-<div class="dumpling-nav twelve columns" >
+<div class="small-12 large-8 small-centered large-centered column">
+<h1 class="dumpling-table">Make Your Soup Selection</h1>
+<div class="dumpling-table twelve columns" >
   <%= simple_form_for @request do |f| %>
     <%= f.input :soup, collection: ['Dumpling Soup', 'Hot and Sour Soup'], as: :radio_buttons, label: false %>
     <br>
