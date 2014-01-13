@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
   def index
-    @requests = Request.all
+    @requests = Request.today
   end
 
   def create
@@ -21,11 +21,10 @@ class RequestsController < ApplicationController
   end
 
   def destroy
-    # Send email
     @request = Request.find(params[:id])
     @user = current_user
     SoupFulfillment.match(@user, @request.user, @request).deliver
-    # Destroy
+
     Request.find(params[:id]).destroy
     redirect_to requests_path,
     notice: 'Request Fulfilled!'
