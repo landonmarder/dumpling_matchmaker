@@ -23,7 +23,6 @@ feature 'user submits soup request',%q{
     click_button 'Sign In'
 
     click_link 'Request Soup'
-    save_and_open_page
     click_button('Hot and Sour')
 
     expect(page).to have_content('Hot and Sour')
