@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - 2.0.0
+before_script:
+  # Before the app is built, this copies our Travis specific YAML so that
+  # it will act like the regular `database.yml` when the tests are run.
+  - cp config/database.travis.yml config/database.yml
+  - psql -c 'create database dumpling_matchmaker_test;' -U postgres

@@ -52,6 +52,9 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'coveralls', require: false
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'pry-rails'

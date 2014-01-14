@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: dumpling_matchmaker_test
+  username: postgres
