@@ -26,3 +26,6 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+{<img src="https://travis-ci.org/skellz/dumpling_matchmaker.png?branch=master" alt="Build Status" />}[https://travis-ci.org/skellz/dumpling_matchmaker]
+{<img src="https://coveralls.io/repos/skellz/dumpling_matchmaker/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/skellz/dumpling_matchmaker]
