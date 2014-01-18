@@ -3,3 +3,11 @@
 Created by Landon Marder and Sherwin Kelly in a day during Launch Academy's Ship It Saturday.
 
 Dumpling King MatchMaker is web app that matches people who want to buy soup with people who want to buy dumplings to achieve a discount using Ruby, Rails, HTML, CSS.
+
+http://dumpling-king-matchmaker.heroku.com
+
+== Demo Account
+
+* Email: example@example.com
+
+* Password: password
