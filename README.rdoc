@@ -1,28 +1,5 @@
-== README
+== Dumpling King Matchmaker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Created by Landon Marder and Sherwin Kelly in a day during Launch Academy's Ship It Saturday.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Dumpling King MatchMaker is web app that matches people who want to buy soup with people who want to buy dumplings to achieve a discount using Ruby, Rails, HTML, CSS.
